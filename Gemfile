@@ -1,6 +1,8 @@
 source 'http://rubygems.org'
 
 case ENV['MONGOID_VERSION']
+when /^6/
+  gem 'mongoid', '~> 6.0'
 when /^5/
   gem 'mongoid', '~> 5.0'
 when /^4/
@@ -11,7 +13,7 @@ when /^2/
   gem 'bson_ext', platforms: :ruby
   gem 'mongoid', '~> 2.8'
 else
-  gem 'mongoid', '>= 2.8', '< 6.0'
+  gem 'mongoid', '>= 2.8', '< 7.0'
 end
 
 group :development do
