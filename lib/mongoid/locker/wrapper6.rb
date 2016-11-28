@@ -9,7 +9,7 @@ module Mongoid
       # @param [Hash] The Mongoid setter
       # @return [Boolean] true if the document was successfully updated, false otherwise
       def self.update(klass, query, setter)
-        klass.find_by(query).update(setter['$set'])
+        klass.find_by(query)&.update(setter['$set'])
       end
 
       # Determine whether the provided document is locked in the database or not.
