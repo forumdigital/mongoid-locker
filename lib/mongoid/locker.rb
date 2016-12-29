@@ -122,7 +122,7 @@ module Mongoid
     end
 
     def lock(opts = {})
-      opts = { retries: 0 }.merge(opts)
+      opts = { retries: 2 }.merge(opts)
 
       attempts_left = opts[:retries] + 1
       retry_sleep = opts[:retry_sleep]
